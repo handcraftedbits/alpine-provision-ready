@@ -6,7 +6,7 @@ ENV ISO_TAG edge
 
 RUN apk update
 RUN apk add alpine-conf alpine-sdk apk-tools build-base busybox dosfstools fakeroot grub-efi squashfs-tools shadow \
-  syslinux xorriso
+  sudo syslinux xorriso
 
 # The user building the ISO has to be part of the 'abuild' group and because we're in Docker things are a lot easier if
 # we run as root, so we need to set a root password, unlock the user, and add it to the group.  We also need to run
