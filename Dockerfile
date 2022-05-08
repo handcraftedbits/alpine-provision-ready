@@ -1,8 +1,8 @@
 FROM alpine:edge
 
 ENV ISO_ARCH x86_64
-ENV ISO_REPOSITORY http://dl-cdn.alpinelinux.org/alpine/edge/main
-ENV ISO_TAG edge
+ENV ISO_REPOSITORY http://dl-cdn.alpinelinux.org/alpine/v3.15/main
+ENV ISO_TAG 3.15
 
 RUN apk update
 RUN apk add alpine-conf alpine-sdk apk-tools build-base busybox dosfstools fakeroot grub-efi squashfs-tools shadow \
@@ -14,7 +14,7 @@ RUN apk add alpine-conf alpine-sdk apk-tools build-base busybox dosfstools faker
 
 RUN usermod -p `mkpasswd password` root
 RUN usermod -U -G abuild root
-RUN sudo -s abuild-keygen -i -a
+RUN sudo -s echo "" | abuild-keygen -i -a
 RUN git clone git://git.alpinelinux.org/aports
 
 COPY container/aports/scripts/* /aports/scripts/
