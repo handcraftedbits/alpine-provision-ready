@@ -1,8 +1,8 @@
 FROM alpine:edge
 
 ENV ISO_ARCH x86_64
-ENV ISO_REPOSITORY http://dl-cdn.alpinelinux.org/alpine/v3.15/main
-ENV ISO_TAG 3.15
+ENV ISO_REPOSITORY http://dl-cdn.alpinelinux.org/alpine/v3.17/main
+ENV ISO_TAG 3.17
 
 RUN apk update
 RUN apk add alpine-conf alpine-sdk apk-tools build-base busybox dosfstools fakeroot grub-efi squashfs-tools shadow \

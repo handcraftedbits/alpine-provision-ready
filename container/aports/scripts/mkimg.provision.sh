@@ -7,6 +7,6 @@ profile_provision() {
 	kernel_flavors="virt"
 	kernel_cmdline="console=tty0 console=ttyS0,115200"
 	syslinux_serial="0 115200"
-	apks="$apks openssh python3"
+	apks="$apks open-vm-tools open-vm-tools-guestinfo openssh python3"
      apkovl="genapkovl-dhcp.sh"
 }

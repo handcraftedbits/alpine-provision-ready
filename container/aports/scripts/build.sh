@@ -1,4 +1,6 @@
-./mkimage.sh --tag ${ISO_TAG} --outdir /iso --arch ${ISO_ARCH} --repository ${ISO_REPOSITORY} --profile provision
+./mkimage.sh --tag ${ISO_TAG} --outdir /iso --arch ${ISO_ARCH} --repository ${ISO_REPOSITORY} \
+     --extra-repository http://dl-cdn.alpinelinux.org/alpine/v${ISO_TAG}/community \
+     --extra-repository http://dl-cdn.alpinelinux.org/alpine/v${ISO_TAG}/community --profile provision
 
 if [ ! -z "$ISO_UID" ]
 then

@@ -56,7 +56,7 @@ depend() {
 }
 
 command="sh"
-command_args="-c $'apk add openssh python3; sed -i \'s/^#PermitRootLogin.*$/PermitRootLogin yes/; s/^#PermitEmptyPasswords.*$/PermitEmptyPasswords yes/\' /etc/ssh/sshd_config; service sshd start'"
+command_args="-c $'apk add open-vm-tools open-vm-tools-guestinfo openssh python3; sed -i \'s/^#PermitRootLogin.*$/PermitRootLogin yes/; s/^#PermitEmptyPasswords.*$/PermitEmptyPasswords yes/\' /etc/ssh/sshd_config; service sshd start'"
 pidfile="/run/${RC_SVCNAME}.pid"
 EOF
 
@@ -74,6 +74,7 @@ rc_add bootmisc boot
 rc_add syslog boot
 rc_add networking boot
 rc_add perform-setup boot
+rc_add open-vm-tools boot
 
 rc_add mount-ro shutdown
 rc_add killprocs shutdown
